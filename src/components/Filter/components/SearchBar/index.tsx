@@ -2,8 +2,8 @@
 import { IconSearch } from "@tabler/icons-react";
 import { useState } from "react";
 import { countryList } from "@/constants/data";
-import useListCountriesStorage from "@/storage/useListCountries";
-import useRegionStorage from "@/storage/useRegionStore";
+import { useRegionStorage } from "@/storage/useRegionStore";
+import { useListCountriesStorage } from "@/storage/useListCountries";
 
 export function SearchBar() {
   const [search, setSearch] = useState<string>("");

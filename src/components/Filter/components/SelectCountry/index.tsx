@@ -1,9 +1,9 @@
 "use client";
 import { regions } from "@/constants/regions";
-import useRegionStore from "@/storage/useRegionStore";
+import { useRegionStorage } from "@/storage/useRegionStore";
 
 export function SelectCountry() {
-  const setRegion = useRegionStore((state) => state.setRegion);
+  const setRegion = useRegionStorage((state) => state.setRegion);
 
   return (
     <>

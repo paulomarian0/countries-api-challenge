@@ -1,5 +1,6 @@
 "use client";
-import ThemeSwitcher from "../ThemeSwitcher";
+
+import { ThemeSwitcher } from "./components/ThemeSwitcher";
 
 export function Header() {
   return (

@@ -11,4 +11,4 @@ const useListCountriesStorage = create<IListCountriesStorage>((set) => ({
     setCountries: (countries) => set({ countries }),
 }))
 
-export default useListCountriesStorage
+export { useListCountriesStorage }

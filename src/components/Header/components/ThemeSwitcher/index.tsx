@@ -2,7 +2,7 @@
 import { IconMoon, IconSun } from "@tabler/icons-react";
 import { useTheme } from "next-themes";
 
-export default function ThemeSwitcher() {
+const ThemeSwitcher = () => {
   const { setTheme, resolvedTheme } = useTheme();
 
   const darkMode = resolvedTheme === "dark";
@@ -15,4 +15,6 @@ export default function ThemeSwitcher() {
       {darkMode ? <IconSun size={20} /> : <IconMoon size={20} />}
     </button>
   );
-}
+};
+
+export { ThemeSwitcher };

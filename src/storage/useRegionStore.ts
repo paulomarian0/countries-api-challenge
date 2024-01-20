@@ -10,4 +10,4 @@ const useRegionStorage = create<IRegionStorage>((set) => ({
     setRegion: (region) => set({ region }),
 }))
 
-export default useRegionStorage
+export { useRegionStorage }
