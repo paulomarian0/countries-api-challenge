@@ -1,4 +1,3 @@
-import { ICountryList } from "@/constants/data";
 import { SearchBar } from "../SearchBar";
 import { SelectCountry } from "../SelectCountry";
 

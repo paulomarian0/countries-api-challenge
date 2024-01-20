@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import { FilterSection } from "../FilterSection";
-import useListCountriesStorage from "@/app/storage/useListCountries";
+import useListCountriesStorage from "@/storage/useListCountries";
 
 export function CountryList() {
   const contries = useListCountriesStorage((state) => state.countries);

@@ -1,9 +1,9 @@
 "use client";
 import { IconSearch } from "@tabler/icons-react";
 import { useState } from "react";
-import { ICountryList, countryList } from "@/constants/data";
-import useRegionStorage from "@/app/storage/useRegionStore";
-import useListCountriesStorage from "@/app/storage/useListCountries";
+import { countryList } from "@/constants/data";
+import useListCountriesStorage from "@/storage/useListCountries";
+import useRegionStorage from "@/storage/useRegionStore";
 
 export function SearchBar() {
   const [search, setSearch] = useState<string>("");

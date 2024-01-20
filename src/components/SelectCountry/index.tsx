@@ -1,7 +1,6 @@
 "use client";
-import useRegionStore from "@/app/storage/useRegionStore";
 import { regions } from "@/constants/regions";
-import { useState } from "react";
+import useRegionStore from "@/storage/useRegionStore";
 
 export function SelectCountry() {
   const setRegion = useRegionStore((state) => state.setRegion);
