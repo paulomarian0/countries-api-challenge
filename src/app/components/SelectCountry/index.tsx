@@ -8,7 +8,7 @@ export function SelectCountry() {
     <>
       <select
         id="countries"
-        className="bg-gray-50 border text-sm rounded-lg block w-48 h-12 p-2.5"
+        className="bg-gray-50 border text-sm rounded-lg block w-48 h-12 p-2.5 dark:bg-slate-800 dark:border-none dark:text-white"
       >
         <option>All</option>
         <option value="US">United States</option>

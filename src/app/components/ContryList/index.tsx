@@ -13,12 +13,12 @@ export function CountryList() {
     <div>
       <FilterSection setCountryList={setList} />
 
-      <main className="grid grid-cols-4 m-4">
+      <main className="grid m-4 sm:grid-cols-2  md:grid-cols-3 lg:grid-cols-4  xl:grid-cols-5">
         {list?.map((item, index) => (
-          <section key={index} className="m-2">
+          <section key={index} className="m-2 shadow-lg">
             <div className="h-40">
               <Image
-                className="object-cover w-full h-full rounded-t-md"
+                className="object-cover w-full h-full rounded-t-md "
                 src={item.flag}
                 alt={item.name}
                 width={100}
@@ -26,7 +26,7 @@ export function CountryList() {
               />
             </div>
 
-            <ol className="px-5 py-6 bg-slate-50 rounded-b-md h-40">
+            <ol className="px-5 py-6 bg-slate-50 rounded-b-md h-44 dark:bg-slate-800">
               <li className="font-extrabold pb-2 text-xl">{item.name}</li>
               <li className="mb-1">
                 <span className="font-semibold">Population:</span>

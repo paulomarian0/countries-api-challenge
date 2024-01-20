@@ -8,7 +8,7 @@ interface IFilterSectionProps {
 
 export function FilterSection({ setCountryList }: IFilterSectionProps) {
   return (
-    <div className="flex justify-between my-16 mx-6">
+    <div className="flex flex-col gap-4 justify-between my-16 mx-6 sm:flex-row">
       <SearchBar setCountryList={setCountryList} />
       <SelectCountry />
     </div>
