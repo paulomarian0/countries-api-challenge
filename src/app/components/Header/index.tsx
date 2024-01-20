@@ -1,5 +1,5 @@
+"use client";
 import { IconMoon, IconSunFilled, IconSunHigh } from "@tabler/icons-react";
-import { SearchBar } from "../SearchBar";
 
 export function Header() {
   return (
@@ -10,8 +10,6 @@ export function Header() {
         {/* <IconSunHigh /> */}
         Dark Mode
       </button>
-
-      <SearchBar />
     </header>
   );
 }
