@@ -25,15 +25,15 @@ export function CountryList() {
             <ol className="px-5 py-6 bg-slate-50 rounded-b-md h-44 dark:bg-slate-800">
               <li className="font-extrabold pb-2 text-xl">{item.name}</li>
               <li className="mb-1">
-                <span className="font-semibold">Population:</span>
-                {item.population}
+                <span className="font-semibold mr-1">Population:</span>
+                {item.population.toLocaleString("en-US")}
               </li>
               <li className="mb-1">
-                <span className="font-semibold">Region:</span>
+                <span className="font-semibold mr-1">Region:</span>
                 {item.region}
               </li>
               <li className="mb-1">
-                <span className="font-semibold">Capital:</span>
+                <span className="font-semibold mr-1">Capital:</span>
                 {item.capital}
               </li>
             </ol>
