@@ -2,19 +2,31 @@
 import { IconSearch } from "@tabler/icons-react";
 import { useState } from "react";
 import { ICountryList, countryList } from "@/constants/data";
+import useRegionStorage from "@/app/storage/useRegionStore";
+import useListCountriesStorage from "@/app/storage/useListCountries";
 
-interface ISearchBarProps {
-  setCountryList: (data: ICountryList[]) => void;
-}
-
-export function SearchBar({ setCountryList }: ISearchBarProps) {
+export function SearchBar() {
   const [search, setSearch] = useState<string>("");
+  const setListContries = useListCountriesStorage(
+    (state) => state.setCountries
+  );
+  const region = useRegionStorage((state) => state.region);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    const filteredList = countryList.filter((item) => {
+    const haveSelectedRegion = region !== "all";
+
+    const filteredByRegionList = countryList.filter(
+      (item) => item.region.toLowerCase() === region.toLowerCase()
+    );
+
+    const selectFilter = haveSelectedRegion
+      ? filteredByRegionList
+      : countryList;
+
+    const filteredList = selectFilter.filter((item) => {
       return item.name.toLowerCase().includes(search.toLowerCase());
     });
-    setCountryList(filteredList);
+    setListContries(filteredList);
 
     e.preventDefault();
   };

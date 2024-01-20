@@ -1,20 +1,16 @@
 "use client";
 import Image from "next/image";
-import { useState } from "react";
 import { FilterSection } from "../FilterSection";
-import { ICountryList, countryList } from "@/constants/data";
+import useListCountriesStorage from "@/app/storage/useListCountries";
 
 export function CountryList() {
-  const [list, setList] = useState<ICountryList[]>(
-    countryList as ICountryList[]
-  );
+  const contries = useListCountriesStorage((state) => state.countries);
 
   return (
     <div>
-      <FilterSection setCountryList={setList} />
-
+      <FilterSection />
       <main className="grid m-4 sm:grid-cols-2  md:grid-cols-3 lg:grid-cols-4  xl:grid-cols-5">
-        {list?.map((item, index) => (
+        {contries?.map((item, index) => (
           <section key={index} className="m-2 shadow-lg">
             <div className="h-40">
               <Image
