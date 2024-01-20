@@ -30,7 +30,7 @@ export function SearchBar({ setCountryList }: ISearchBarProps) {
         </div>
         <input
           type="search"
-          className="w-96 px-4 h-12 ps-10 text-sm border-none rounded-md dark:bg-slate-800"
+          className="w-full sm:w-96 px-4 h-12 ps-10 text-sm border-none rounded-md dark:bg-slate-800 outline-none"
           placeholder="Search for a country..."
           value={search}
           onChange={(e) => setSearch(e.target.value)}

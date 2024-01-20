@@ -1,20 +1,22 @@
 "use client";
+import { regions } from "@/constants/regions";
 import { useState } from "react";
 
 export function SelectCountry() {
-  const [country, setCountry] = useState("");
+  const [country, setCountry] = useState("all");
 
   return (
     <>
       <select
+        onChange={(e) => setCountry(e.target.value)}
         id="countries"
-        className="bg-gray-50 border text-sm rounded-lg block w-48 h-12 p-2.5 dark:bg-slate-800 dark:border-none dark:text-white"
+        className="bg-gray-50 border text-sm rounded-lg block h-12 p-2.5 outline-none w-full sm:w-48 dark:bg-slate-800 dark:border-none dark:text-white"
       >
-        <option>All</option>
-        <option value="US">United States</option>
-        <option value="CA">Canada</option>
-        <option value="FR">France</option>
-        <option value="DE">Germany</option>
+        {regions.map((item, index) => (
+          <option key={index} value={item.value}>
+            {item.name}
+          </option>
+        ))}
       </select>
     </>
   );

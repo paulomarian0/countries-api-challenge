@@ -1,3 +1,4 @@
+"use client";
 import { IconMoon, IconSun } from "@tabler/icons-react";
 import { useTheme } from "next-themes";
 

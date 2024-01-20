@@ -1,6 +1,4 @@
-import { ThemeProvider } from "next-themes";
 import { CountryList } from "./components/ContryList";
-import { FilterSection } from "./components/FilterSection";
 import { Header } from "./components/Header";
 
 export default function Home() {
