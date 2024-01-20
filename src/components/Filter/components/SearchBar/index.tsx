@@ -1,18 +1,18 @@
 "use client";
 import { IconSearch } from "@tabler/icons-react";
-import { useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { countryList } from "@/constants/data";
 import { useRegionStorage } from "@/storage/useRegionStore";
 import { useListCountriesStorage } from "@/storage/useListCountries";
 
 export function SearchBar() {
   const [search, setSearch] = useState<string>("");
-  const setListContries = useListCountriesStorage(
+  const setListCountries = useListCountriesStorage(
     (state) => state.setCountries
   );
   const region = useRegionStorage((state) => state.region);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = useCallback(() => {
     const haveSelectedRegion = region !== "all";
 
     const filteredByRegionList = countryList.filter(
@@ -26,13 +26,16 @@ export function SearchBar() {
     const filteredList = selectFilter.filter((item) => {
       return item.name.toLowerCase().includes(search.toLowerCase());
     });
-    setListContries(filteredList);
 
-    e.preventDefault();
-  };
+    setListCountries(filteredList);
+  }, [region, search, setListCountries]);
+
+  useEffect(() => {
+    handleSubmit();
+  }, [region, handleSubmit]);
 
   return (
-    <form onSubmit={(data) => handleSubmit(data)}>
+    <section>
       <div className="relative">
         <div
           id="search"
@@ -48,6 +51,6 @@ export function SearchBar() {
           onChange={(e) => setSearch(e.target.value)}
         />
       </div>
-    </form>
+    </section>
   );
 }
